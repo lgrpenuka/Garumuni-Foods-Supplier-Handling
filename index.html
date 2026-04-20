@@ -157,6 +157,27 @@
         .section-sub { color: var(--muted); max-width: 560px; font-size: 0.95rem; font-weight: 300; }
         .container { max-width: 1160px; margin: 0 auto; }
 
+        /* ── WHO WE BUY FROM ── */
+        #who { background: var(--white); }
+        .who-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+        .who-card {
+            background: var(--bg); border: 1.5px solid var(--border); border-radius: 20px;
+            padding: 36px 28px; text-align: center; transition: all 0.3s; cursor: default;
+        }
+        .who-card:hover { border-color: var(--green); transform: translateY(-5px); box-shadow: 0 16px 40px rgba(42,122,75,0.12); }
+        .who-card-icon { font-size: 2.8rem; margin-bottom: 16px; line-height: 1; }
+        .who-card-title { font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+        .who-card-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.75; margin-bottom: 18px; }
+        .who-card-tag { display: inline-block; background: var(--green-pale); color: var(--green); font-size: 0.7rem; padding: 4px 14px; border-radius: 50px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+        .who-call {
+            margin-top: 48px; text-align: center; background: linear-gradient(135deg, var(--green-pale), #e8f5ee);
+            border-radius: 18px; padding: 28px 24px; border: 1px solid rgba(42,122,75,0.15);
+        }
+        .who-call-label { color: var(--muted); font-size: 0.88rem; margin-bottom: 10px; }
+        .who-call-number { color: var(--green); font-weight: 700; font-size: 1.25rem; text-decoration: none; display: inline-block; margin-bottom: 6px; }
+        .who-call-number:hover { color: var(--green-dark); }
+        .who-call-note { color: var(--muted); font-size: 0.78rem; }
+
         /* ── MARKET PRICES ── */
         #prices { background: var(--white); }
         .prices-header { margin-bottom: 48px; }
@@ -624,6 +645,7 @@
         }
             nav { padding: 14px 24px; }
             .nav-links { display: none; }
+            .who-cards { grid-template-columns: 1fr; }
             .chain-split { grid-template-columns: 1fr; }
             .chain-left { position: relative; height: 60vw; min-height: 280px; }
             .chain-right { padding: 48px 24px; }
@@ -650,9 +672,9 @@
         <span>Garumuni Foods</span>
     </div>
     <ul class="nav-links">
+        <li><a href="#who">Who We Serve</a></li>
         <li><a href="#prices">Market Rates</a></li>
         <li><a href="#chain">Supply Chain</a></li>
-        <li><a href="#map-section">Our Zones</a></li>
         <li><a href="#tracker">Track Batch</a></li>
         <li><a href="#testimonials">Stories</a></li>
     </ul>
@@ -675,7 +697,7 @@
     <div class="hero-stats">
         <div class="hero-stat">
             <strong class="counter" data-target="1200">0</strong>
-            <span>Farmers Connected</span>
+            <span>Active Suppliers</span>
         </div>
         <div class="hero-stat">
             <strong class="counter" data-target="47">0</strong>
@@ -717,6 +739,42 @@
         <div class="ticker-item"><i class="fa-solid fa-droplet" style="color:#b7f5d1"></i> <span class="ti-label">Cinnamon Oil</span> <span class="ti-price">LKR 18,500/L</span> <span class="ti-down"><i class="fa-solid fa-arrow-down"></i> -0.8%</span></div>
     </div>
 </div>
+
+<!-- ── WHO WE BUY FROM ── -->
+<section id="who">
+    <div class="container">
+        <div class="reveal" style="text-align:center;max-width:620px;margin:0 auto">
+            <p class="section-label">Open to All Suppliers</p>
+            <h2 class="section-title">We Buy From Everyone</h2>
+            <p class="section-sub">Whether you are a small farmer, a registered broker, or a large cooperative — you are welcome. No tech experience needed to get started.</p>
+        </div>
+        <div class="who-cards">
+            <div class="who-card reveal">
+                <div class="who-card-icon">🌾</div>
+                <div class="who-card-title">Farmers</div>
+                <div class="who-card-desc">Grow cinnamon or spice crops on your land? Just register your stock and we handle everything — collection, grading, transport, and payment directly to you.</div>
+                <span class="who-card-tag">We come to your farm</span>
+            </div>
+            <div class="who-card reveal">
+                <div class="who-card-icon">🤝</div>
+                <div class="who-card-title">Middlemen &amp; Brokers</div>
+                <div class="who-card-desc">Collect from multiple farms and trade in bulk? Register your consolidated stock and receive premium bulk rates. We work with registered traders across all districts.</div>
+                <span class="who-card-tag">Bulk pricing available</span>
+            </div>
+            <div class="who-card reveal">
+                <div class="who-card-icon">🏘️</div>
+                <div class="who-card-title">Cooperatives &amp; Groups</div>
+                <div class="who-card-desc">Representing a farmer group or rural cooperative? We arrange large volume collections with dedicated trucks, priority grading, and group payment settlements.</div>
+                <span class="who-card-tag">Priority collection</span>
+            </div>
+        </div>
+        <div class="who-call reveal">
+            <div class="who-call-label">Not comfortable using the internet? That is completely fine.</div>
+            <a class="who-call-number" href="tel:+94112345678"><i class="fa-solid fa-phone"></i> &nbsp;Just call us: +94 11 234 5678</a>
+            <div class="who-call-note">Our team speaks Sinhala and Tamil. We will register your stock over the phone — free of charge.</div>
+        </div>
+    </div>
+</section>
 
 <!-- ── MARKET PRICES ── -->
 <section id="prices">
@@ -794,7 +852,7 @@
 <section id="chain">
     <div class="chain-split">
         <div class="chain-left">
-            <img src="b1.jpg" alt="Cinnamon Processing">
+            <img src="https://images.unsplash.com/photo-1561181286-d3f7bf3b1d0a?auto=format&fit=crop&w=1200&q=80" alt="Cinnamon Processing">
             <div class="chain-left-overlay">
                 <div class="chain-left-text reveal">
                     <p class="section-label">Farm to Export</p>
@@ -826,7 +884,7 @@
                     <div class="step-num">📦</div>
                     <div class="step-body">
                         <div class="step-title">Inventory &amp; Stock Logging</div>
-                        <div class="step-desc">Accepted batches are digitally logged into our inventory system. Farmers receive an SMS confirmation with their batch ID, quantity received, and grade assigned.</div>
+                        <div class="step-desc">Accepted batches are digitally logged into our inventory system. Suppliers receive an SMS confirmation with their batch ID, quantity received, and grade assigned.</div>
                         <div class="step-tag">Batch ID Issued</div>
                     </div>
                 </div>
@@ -842,7 +900,7 @@
                     <div class="step-num">🧪</div>
                     <div class="step-body">
                         <div class="step-title">Laboratory Testing</div>
-                        <div class="step-desc">Independent lab testing for pesticide residues, heavy metals, volatile oil content (minimum 0.7%), and microbial safety. Results shared with farmers on request.</div>
+                        <div class="step-desc">Independent lab testing for pesticide residues, heavy metals, volatile oil content (minimum 0.7%), and microbial safety. Results shared with all suppliers on request.</div>
                         <div class="step-tag">ISO / EU Compliance</div>
                     </div>
                 </div>
@@ -858,7 +916,7 @@
                     <div class="step-num">🚢</div>
                     <div class="step-body">
                         <div class="step-title">Export &amp; Dispatch</div>
-                        <div class="step-desc">Goods are shipped via Colombo Port with full documentation — Certificate of Origin, Phytosanitary Certificate, and EU Organic Certification where applicable. Farmers can view dispatch status online.</div>
+                        <div class="step-desc">Goods are shipped via Colombo Port with full documentation — Certificate of Origin, Phytosanitary Certificate, and EU Organic Certification where applicable. All suppliers can view dispatch status online.</div>
                         <div class="step-tag">Global Markets Reached</div>
                     </div>
                 </div>
@@ -872,7 +930,7 @@
 <section id="tracker">
     <div class="container">
         <div class="reveal" style="margin-bottom:40px">
-            <p class="section-label">Farmer Transparency</p>
+            <p class="section-label">Full Transparency</p>
             <h2 class="section-title">Track Your Batch</h2>
             <p class="section-sub">Enter your batch ID to see exactly where your cinnamon is in the processing pipeline — from arrival to export.</p>
         </div>
@@ -910,7 +968,7 @@
         <div class="reveal" style="margin-bottom:52px">
             <p class="section-label">Where We Work</p>
             <h2 class="section-title">Collection Zones &amp; Centres</h2>
-            <p class="section-sub">We collect directly from farmers across Sri Lanka's key cinnamon-growing districts, with dedicated collection centres in each zone.</p>
+            <p class="section-sub">We collect directly from farmers, middlemen, and cooperatives across Sri Lanka's key cinnamon-growing districts, with dedicated collection centres in each zone.</p>
         </div>
         <div class="map-wrap">
             <div>
@@ -920,7 +978,7 @@
                         <div class="zone-info">
                             <strong>Matale District</strong>
                             <span>Central Province · Primary collection zone</span>
-                            <span class="testi-tag">Est. 420 farmers</span>
+                            <span class="testi-tag">Est. 420 suppliers</span>
                         </div>
                         <div class="zone-badge">ACTIVE</div>
                     </div>
@@ -929,7 +987,7 @@
                         <div class="zone-info">
                             <strong>Kurunegala District</strong>
                             <span>North Western Province · Large scale procurement</span>
-                            <span class="testi-tag">Est. 310 farmers</span>
+                            <span class="testi-tag">Est. 310 suppliers</span>
                         </div>
                         <div class="zone-badge">ACTIVE</div>
                     </div>
@@ -938,7 +996,7 @@
                         <div class="zone-info">
                             <strong>Galle District</strong>
                             <span>Southern Province · Coastal premium cinnamon</span>
-                            <span class="testi-tag">Est. 280 farmers</span>
+                            <span class="testi-tag">Est. 280 suppliers</span>
                         </div>
                         <div class="zone-badge">ACTIVE</div>
                     </div>
@@ -947,7 +1005,7 @@
                         <div class="zone-info">
                             <strong>Kandy District</strong>
                             <span>Central Province · Highland grown spice</span>
-                            <span class="testi-tag">Est. 190 farmers</span>
+                            <span class="testi-tag">Est. 190 suppliers</span>
                         </div>
                         <div class="zone-badge">ACTIVE</div>
                     </div>
@@ -978,7 +1036,7 @@
             <div class="about-item reveal">
                 <div class="about-icon"><i class="fa-solid fa-users"></i></div>
                 <div class="about-num counter" data-target="1200">0</div>
-                <div class="about-label">Registered Farmers</div>
+                <div class="about-label">Registered Suppliers</div>
             </div>
             <div class="about-item reveal">
                 <div class="about-icon"><i class="fa-solid fa-globe"></i></div>
@@ -1003,8 +1061,8 @@
 <section id="testimonials">
     <div class="container">
         <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto 0">
-            <p class="section-label">Farmer Stories</p>
-            <h2 class="section-title">Trusted by Thousands of Farmers</h2>
+            <p class="section-label">Supplier Stories</p>
+            <h2 class="section-title">Trusted by Farmers &amp; Middlemen</h2>
             <p class="section-sub" style="margin:0 auto">Here's what our supplier community says about working with Garumuni Foods.</p>
         </div>
         <div class="testi-carousel reveal">
@@ -1044,7 +1102,7 @@
                         <div>
                             <div class="testi-name">Nandani Cooperative</div>
                             <div class="testi-loc"><i class="fa-solid fa-location-dot" style="font-size:0.65rem"></i> Kurunegala District</div>
-                            <span class="testi-tag">Farmer Cooperative · 500+ members</span>
+                            <span class="testi-tag">Supplier Cooperative · 500+ members</span>
                         </div>
                     </div>
                 </div>
@@ -1106,26 +1164,28 @@
                 <div id="form-body">
                     <div class="form-group">
                         <label>Full Name / Business Name</label>
-                        <input type="text" placeholder="e.g. Bandara Farms, Matale" required>
+                        <input id="f-name" type="text" placeholder="e.g. Bandara Farms, Matale" required>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label>Phone Number</label>
-                            <input type="tel" placeholder="07x xxxxxxx" required>
+                            <input id="f-phone" type="tel" placeholder="07x xxxxxxx" required>
                         </div>
                         <div class="form-group">
                             <label>Supplier Type</label>
-                            <select>
+                            <select id="f-type">
                                 <option>Direct Farmer</option>
                                 <option>Middleman / Broker</option>
-                                <option>Farmer Cooperative</option>
+                                <option>Registered Trader</option>
+                                <option>Supplier Cooperative</option>
+                                <option>Collector / Aggregator</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label>Crop Category</label>
-                            <select>
+                            <select id="f-crop">
                                 <option>Cinnamon Quills (Alba)</option>
                                 <option>Cinnamon Quills (C5)</option>
                                 <option>Cinnamon Quillings</option>
@@ -1136,20 +1196,23 @@
                         </div>
                         <div class="form-group">
                             <label>Approx. Quantity (kg)</label>
-                            <input type="number" placeholder="e.g. 250">
+                            <input id="f-qty" type="number" placeholder="e.g. 250">
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Collection Location</label>
-                        <input type="text" placeholder="Village / Town, District">
+                        <input id="f-location" type="text" placeholder="Village / Town, District">
                     </div>
                     <div class="form-group">
                         <label>Additional Notes (optional)</label>
-                        <textarea placeholder="Mention harvest date, storage conditions, or any special notes..."></textarea>
+                        <textarea id="f-notes" placeholder="Mention harvest date, storage conditions, or any special notes..."></textarea>
                     </div>
-                    <button class="submit-btn" onclick="submitForm(event)">
+                    <button class="submit-btn" id="submit-btn" onclick="submitForm(event)">
                         <i class="fa-solid fa-paper-plane"></i> Register Supply Stock
                     </button>
+                    <div id="form-error" style="display:none;margin-top:12px;color:#c0392b;font-size:0.84rem;text-align:center">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Could not send — please call us directly.
+                    </div>
                 </div>
                 <div class="form-success" id="form-success">
                     <i class="fa-solid fa-circle-check"></i>
@@ -1167,7 +1230,7 @@
         <div class="footer-wrap">
             <div class="footer-brand">
                 <div class="footer-logo">🌿 Garumuni Foods (Pvt) Ltd.</div>
-                <p>Sri Lanka's premium Ceylon cinnamon export company — connecting farmers directly to the world since 2008. Fully traceable, lab-tested, and ethically sourced.</p>
+                <p>Sri Lanka's premium Ceylon cinnamon export company — connecting farmers, middlemen, and cooperatives directly to the world since 2008. Fully traceable, lab-tested, and ethically sourced.</p>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
@@ -1219,10 +1282,10 @@
     });
 
     const locations = [
-        { lat: 7.4675, lng: 80.6234, name: 'Matale District', desc: 'Primary collection zone · Est. 420 farmers', icon: greenIcon },
-        { lat: 7.4818, lng: 80.3609, name: 'Kurunegala District', desc: 'Large scale procurement · Est. 310 farmers', icon: greenIcon },
-        { lat: 6.0535, lng: 80.2210, name: 'Galle District', desc: 'Coastal premium cinnamon · Est. 280 farmers', icon: greenIcon },
-        { lat: 7.2906, lng: 80.6337, name: 'Kandy District', desc: 'Highland grown spice · Est. 190 farmers', icon: greenIcon },
+        { lat: 7.4675, lng: 80.6234, name: 'Matale District', desc: 'Primary collection zone · Est. 420 suppliers', icon: greenIcon },
+        { lat: 7.4818, lng: 80.3609, name: 'Kurunegala District', desc: 'Large scale procurement · Est. 310 suppliers', icon: greenIcon },
+        { lat: 6.0535, lng: 80.2210, name: 'Galle District', desc: 'Coastal premium cinnamon · Est. 280 suppliers', icon: greenIcon },
+        { lat: 7.2906, lng: 80.6337, name: 'Kandy District', desc: 'Highland grown spice · Est. 190 suppliers', icon: greenIcon },
         { lat: 6.7942, lng: 79.8830, name: 'Garumuni Foods HQ', desc: '537, De Soysa Rd, Moratuwa · Processing & Export', icon: hqIcon },
     ];
 
@@ -1444,10 +1507,51 @@ function trackBatch() {
 }
 
 // ── FORM SUBMIT ──
+// ── GOOGLE SHEETS INTEGRATION ──
+// Paste your Apps Script deployment URL below after following the setup steps
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwhEVV4UjroeZrmidsdiKk1qdReCsho-MNIznw7KUP3g5QnatZQuAq1mBw_j_1f_6SWQw/exec';
+
 function submitForm(e) {
     e.preventDefault();
-    document.getElementById('form-body').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
+
+    const name     = document.getElementById('f-name').value.trim();
+    const phone    = document.getElementById('f-phone').value.trim();
+    if (!name || !phone) {
+        alert('Please enter your name and phone number.');
+        return;
+    }
+
+    const btn = document.getElementById('submit-btn');
+    const errBox = document.getElementById('form-error');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+    errBox.style.display = 'none';
+
+    const payload = {
+        name:         name,
+        phone:        phone,
+        supplierType: document.getElementById('f-type').value,
+        cropCategory: document.getElementById('f-crop').value,
+        quantity:     document.getElementById('f-qty').value || '—',
+        location:     document.getElementById('f-location').value || '—',
+        notes:        document.getElementById('f-notes').value || '—'
+    };
+
+    fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    })
+    .then(() => {
+        document.getElementById('form-body').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+    })
+    .catch(() => {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Register Supply Stock';
+        errBox.style.display = 'block';
+    });
 }
 
 // ── PRICE FLUCTUATION (live effect) ──
@@ -1467,5 +1571,5 @@ setInterval(() => {
     });
 }, 4500);
 </script>
-</body>
+<script src="https://replit-cdn.com/replit-pill/replit-pill.global.js" data-referral-code="mq7yff24sl3d" data-repl-id="420f25ee-394d-4e61-ad23-e02cc0c04694"></script></body>
 </html>
